@@ -12,6 +12,9 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { RegisterComponent } from './components/register/register.component';
 
+import { ValidateService } from './services/validate.service';
+import { FlashMessagesModule } from 'angular2-flash-messages';
+
 const appRoutes: Routes = [
   {path:'', component: HomeComponent},
   {path:'register', component: RegisterComponent},
@@ -23,20 +26,21 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent,
-    HomeComponent,
-    LoginComponent,
     NavbarComponent,
-    ProfileComponent,
-    RegisterComponent
+    LoginComponent,
+    RegisterComponent,
+    HomeComponent,
+    DashboardComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    FlashMessagesModule
   ],
-  providers: [],
+  providers: [ValidateService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
