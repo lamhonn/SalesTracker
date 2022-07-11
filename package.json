@@ -15,9 +15,12 @@
     "express-session": "^1.17.3",
     "jsonwebtoken": "*",
     "mongoose": "*",
-    "node": "12.22.12",
+    "node": "12.x",
     "passport": "*",
     "passport-jwt": "*"
+  },
+  "engines": {
+    "node": "12.x"
   },
   "author": "Lam Honn",
   "license": "ISC"
