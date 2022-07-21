@@ -8,7 +8,7 @@ const User = require('../models/user');
 // New log
 router.post('/new', (req, res, next) => {
     let newLog = new Log({
-        username: req.User.username,
+        username: req.body.username,
         date: req.body.date,
         hours: req.body.hours
     });
@@ -22,8 +22,12 @@ router.post('/new', (req, res, next) => {
     })
 });
 
-router.get('/get', passport.authenticate('jwt', {session: false}), (req, res, next) => {
-    res.json({log: req.log})
+// Get logs from db
+router.get('/get/:username', passport.authenticate('jwt', {session: false}), (req, res, next) => {
+    Log.getLogsByUsername(req.params.username, (err, log) => {
+        if(err) throw err;
+        res.json(log);
+    });
 });
 
 module.exports = router;

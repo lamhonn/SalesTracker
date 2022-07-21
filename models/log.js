@@ -22,13 +22,13 @@ const LogSchema = mongoose.Schema({
 
 const Log = module.exports = mongoose.model('Log', LogSchema);
 
-// Find workhours for a certain interval
+// Find workhours for user
 module.exports.getLogsByUsername = function(username, callback) {
-    //TODO: interval function
     const query = {username: username};
     Log.findOne(query, callback);
 };
 
+// Add workhours
 module.exports.addLog = function(newLog, callback) {
     bcrypt.genSalt(10, (err, salt) => {
         if(err) throw err;
