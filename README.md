@@ -1,2 +1,2 @@
 This is a final project for FiTech Software Development: Full-stack course.
-It is a sales tracker, where you can log your daily sales and compare sales amounts with others.
+The app is a simple workhour logger, where you can log your worktime done.

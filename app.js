@@ -25,6 +25,7 @@ const app = express();
 app.use(session({ secret:'salestracker' }));
 
 const users = require('./routes/users');
+const logs = require('./routes/logs');
 
 // PORT number
 const port = 3000;
@@ -45,6 +46,7 @@ app.use(passport.session());
 require('./config/passport')(passport);
 
 app.use('/users', users);
+app.use('/logs', logs);
 
 // Index Route
 app.get('/', (req, res) => {
