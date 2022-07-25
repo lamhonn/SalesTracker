@@ -22,7 +22,7 @@ mongoose.connection.on('error', () => {
 
 const app = express();
 // Express middleware
-app.use(session({ secret:'salestracker' }));
+app.use(session({ secret:'timelogger' }));
 
 const users = require('./routes/users');
 const logs = require('./routes/logs');

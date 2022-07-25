@@ -1,4 +1,4 @@
 module.exports = {
-    database: 'mongodb://localhost:27017/salestracker',
-    secret: 'salestracker'
+    database: 'mongodb://localhost:27017/timelogger',
+    secret: 'timelogger'
 };

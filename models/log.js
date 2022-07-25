@@ -25,7 +25,7 @@ const Log = module.exports = mongoose.model('Log', LogSchema);
 // Find workhours for user
 module.exports.getLogsByUsername = function(username, callback) {
     const query = {username: username};
-    Log.findOne(query, callback);
+    Log.find(query, callback);
 };
 
 // Add workhours

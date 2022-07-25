@@ -33,6 +33,20 @@ export class AuthService {
       .map(res => res.json());
   }
 
+  newLog(log) {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post('http://localhost:300/logs/new', log, {headers: headers})
+      .map(res => res.json());
+  }
+
+  getLog(username) {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.get('http://localhost:3000/logs/get/' + username, {headers: headers})
+      .map(res => res.json());
+  }
+
   loadToken() {
     const token = localStorage.getItem('id_token');
     this.authToken = token;
