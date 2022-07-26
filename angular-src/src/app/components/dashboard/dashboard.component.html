@@ -1,6 +1,6 @@
 <!-- Based on a Bootswatch template -->
 <div *ngIf="user">
-  <form [formGroup]="logform" (submit)="logHours(user.username)">
+  <form (submit)="logHours(user.username)">
     <fieldset>
       <legend>New log</legend>
       <div class="form-group">
