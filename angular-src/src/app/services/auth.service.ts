@@ -36,12 +36,14 @@ export class AuthService {
   newLog(log) {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.post('http://localhost:300/logs/new', log, {headers: headers})
+    return this.http.post('http://localhost:3000/logs/new', log, {headers: headers})
       .map(res => res.json());
   }
 
   getLog(username) {
     let headers = new Headers();
+    this.loadToken();
+    headers.append('Authorization', this.authToken)
     headers.append('Content-Type', 'application/json');
     return this.http.get('http://localhost:3000/logs/get/' + username, {headers: headers})
       .map(res => res.json());

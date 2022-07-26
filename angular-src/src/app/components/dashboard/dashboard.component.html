@@ -1,6 +1,6 @@
 <!-- Based on a Bootswatch template -->
 <div *ngIf="user">
-  <form (submit)="logHours(user.username)">
+  <form [formGroup]="logform" (submit)="logHours(user.username)">
     <fieldset>
       <legend>New log</legend>
       <div class="form-group">
@@ -15,7 +15,7 @@
         <label for="inputMinutes" class="form-label mt-4">Minutes</label>
         <input type="number" class="form-control" id="inputMinutes" [(ngModel)]="minutes" name="number" step="1" min="0" max="59" placeholder="0" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
       </div>
-    <button type="submit" class="btn btn-primary" style="margin-top:2%">Register</button>
-  </fieldset>
-</form>
+      <button type="submit" class="btn btn-primary" style="margin-top:2%">Register</button>
+    </fieldset>
+  </form>
 </div>
