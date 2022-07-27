@@ -42,7 +42,7 @@ export class DashboardComponent implements OnInit {
     
     //Required fields
     if(!this.validateService.validateLog(log)) {
-      this.flashMessage.show('Please fill in all fields properly', {cssClass: 'alert-danger', timeout: 3000});
+      this.flashMessage.show('Check your log inputs', {cssClass: 'alert-danger', timeout: 3000});
       return false;
     };
 

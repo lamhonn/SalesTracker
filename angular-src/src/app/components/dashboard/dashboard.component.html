@@ -2,20 +2,98 @@
 <div *ngIf="user">
   <form (submit)="logHours(user.username)">
     <fieldset>
-      <legend>New log</legend>
-      <div class="form-group">
-        <label for="inputDate" class="form-label mt-4">Date</label>
-        <input type="Date" class="form-control" id="inputDate" [(ngModel)]="date" name="date">
-      </div>
-      <div class="form-group">
-        <label for="inputHours" class="form-label mt-4">Hours</label>
-        <input type="number" class="form-control" id="inputHours" [(ngModel)]="hours" name="hours" step="1" min="0" max="23" placeholder="0" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
-      </div>
-      <div class="form-group">
-        <label for="inputMinutes" class="form-label mt-4">Minutes</label>
-        <input type="number" class="form-control" id="inputMinutes" [(ngModel)]="minutes" name="number" step="1" min="0" max="59" placeholder="0" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
-      </div>
-      <button type="submit" class="btn btn-primary" style="margin-top:2%">Register</button>
-    </fieldset>
+      <h4>New log</h4>
+    <table class="table">
+      <label>Create a new workhour log</label>
+        <tr>
+          <th scope="col">Date</th>
+          <th scope="col">Hours</th>
+          <th scope="col">Minutes</th>
+          <th scope="col"></th>
+        </tr>
+        <tr>
+          <td>
+            <input 
+              type="Date" 
+              class="form-control" 
+              id="inputDate" 
+              [(ngModel)]="date" 
+              name="date"
+              >
+          </td>
+          <td>
+            <input 
+              type="number" 
+              class="form-control" 
+              id="inputHours" 
+              [(ngModel)]="hours" 
+              name="hours" 
+              step="1" 
+              min="0" max="23" 
+              placeholder="0" 
+              onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+              >
+          </td>
+          <td>
+            <input 
+              type="number" 
+              class="form-control" 
+              id="inputMinutes" 
+              [(ngModel)]="minutes" 
+              name="number" 
+              step="1" 
+              min="0" max="59" 
+              placeholder="0" 
+              onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+              >
+          </td>
+          <td>
+            <button type="submit" class="btn btn-primary">Log</button>
+          </td>
+        </tr>
+    </table>
+  </fieldset>
   </form>
+
+  <h4 style="margin-top: 2%">Past workhours</h4>
+  <table class="table table-hover">
+    <thead>
+      <label>Search workhours between</label>
+      <tr>
+        <td>
+          <label for="inputStartDate">From:</label>
+          <input 
+            type="Date" 
+            class="form-control" 
+            id="inputStartDate" 
+            name="date"
+            >
+        </td>
+        <td>
+          <label for="inputEndDate">To:</label>
+          <input 
+          type="Date" 
+          class="form-control" 
+          id="inputEndDate" 
+          name="date"
+          >
+        </td>
+        <td>
+          <button type="submit" class="btn btn-primary">Search</button>
+        </td>
+      </tr>
+      <tr>
+        <th scope="col">Date</th>
+        <th scope="col">Hours</th>
+        <th scope="col">Minutes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Column content</td>
+        <td>Column content</td>
+        <td>Column content</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
