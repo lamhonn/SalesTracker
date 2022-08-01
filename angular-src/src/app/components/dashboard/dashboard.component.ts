@@ -10,7 +10,7 @@ import { FlashMessagesModule, FlashMessagesService } from 'angular2-flash-messag
 })
 export class DashboardComponent implements OnInit {
   user: Object;
-  log: any;
+  log: Object;
 
   username: String;
   date: Date;
@@ -24,8 +24,23 @@ export class DashboardComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    var tempUsername;
     this.authService.getProfile().subscribe(profile => {
       this.user = profile.user;
+      // this.authService.getLog(profile.user.username).subscribe(workhour => {
+      //   this.log = workhour.log;
+      //   console.log(this.log);
+      // });
+      tempUsername = profile.user.username;     
+    },
+    err => {
+      console.log(err);
+      return false;
+    });
+
+    this.authService.getLog(tempUsername).subscribe(workhour => {
+      this.log = workhour.log;
+      console.log(this.log);
     },
     err => {
       console.log(err);
@@ -33,7 +48,7 @@ export class DashboardComponent implements OnInit {
     });
   }
 
-  logHours(usname) {
+  logHours(usname: String) {
     const log = {
       username: usname, // Username is passed from html component
       date: this.date,
@@ -55,4 +70,14 @@ export class DashboardComponent implements OnInit {
       }
     });
   }
+
+  // getLogsForRange(usname: String) {
+  //   this.authService.getLog(usname).subscribe(workhour => {
+  //     this.log = workhour.log;
+  //   },
+  //   err => {
+  //     console.log(err);
+  //     return false;
+  //   });
+  // }
 }

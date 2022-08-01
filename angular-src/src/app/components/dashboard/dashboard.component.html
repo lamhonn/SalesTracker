@@ -56,44 +56,48 @@
   </form>
 
   <h4 style="margin-top: 2%">Past workhours</h4>
-  <table class="table table-hover">
-    <thead>
-      <label>Search workhours between</label>
-      <tr>
+  <form (submit)="getLogsForRange(user.username)">
+    <table class="table table-hover" ng-repeat="log in logs">
+      <thead>
+        <label>Search workhours between</label>
+        <tr>
         <td>
           <label for="inputStartDate">From:</label>
           <input 
             type="Date" 
             class="form-control" 
             id="inputStartDate" 
-            name="date"
+            name="startDate"
+            [(ngModel)]="startDate"
             >
-        </td>
+          </td>
         <td>
           <label for="inputEndDate">To:</label>
           <input 
-          type="Date" 
-          class="form-control" 
-          id="inputEndDate" 
-          name="date"
+            type="Date" 
+            class="form-control" 
+            id="inputEndDate" 
+            name="endDate"
+            [(ngModel)]="endDate"
           >
         </td>
         <td>
           <button type="submit" class="btn btn-primary">Search</button>
         </td>
-      </tr>
-      <tr>
-        <th scope="col">Date</th>
-        <th scope="col">Hours</th>
-        <th scope="col">Minutes</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Column content</td>
-        <td>Column content</td>
-        <td>Column content</td>
-      </tr>
-    </tbody>
-  </table>
+        </tr>
+        <tr>
+          <th scope="col">Date</th>
+          <th scope="col">Hours</th>
+          <th scope="col">Minutes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <!-- <td>{{log.date}}</td>
+          <td>{{log.hours}}</td>
+          <td>{{log.hours}}</td> -->
+        </tr>
+      </tbody>
+    </table>
+  </form>
 </div>
