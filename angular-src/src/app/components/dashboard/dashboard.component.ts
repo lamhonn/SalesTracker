@@ -24,23 +24,9 @@ export class DashboardComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    var tempUsername;
     this.authService.getProfile().subscribe(profile => {
       this.user = profile.user;
-      // this.authService.getLog(profile.user.username).subscribe(workhour => {
-      //   this.log = workhour.log;
-      //   console.log(this.log);
-      // });
-      tempUsername = profile.user.username;     
-    },
-    err => {
-      console.log(err);
-      return false;
-    });
-
-    this.authService.getLog(tempUsername).subscribe(workhour => {
-      this.log = workhour.log;
-      console.log(this.log);
+      this.getLogs(profile.user.username);
     },
     err => {
       console.log(err);
@@ -48,6 +34,17 @@ export class DashboardComponent implements OnInit {
     });
   }
 
+  getLogs(username) {
+    this.authService.getLog(username).subscribe(workhour => {
+      this.log = workhour.log;
+      console.log(workhour);
+    },
+    err => {
+      console.log(err);
+      return false;
+    });
+  }
+  
   logHours(usname: String) {
     const log = {
       username: usname, // Username is passed from html component
