@@ -11,6 +11,9 @@
         <li class="nav-item">
           <a *ngIf="authService.loggedIn()" class="nav-link" [routerLink]="['/dashboard']">My workhours</a>
         </li>
+        <li class="nav-item">
+          <a *ngIf="authService.loggedIn()" class="nav-link" [routerLink]="['/newlog']">New log</a>
+        </li>
       </ul>
 
       <ul class="navbar-nav">

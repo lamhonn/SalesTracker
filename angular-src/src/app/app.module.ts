@@ -11,6 +11,7 @@ import { LoginComponent } from './components/login/login.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { RegisterComponent } from './components/register/register.component';
+import { NewlogComponent } from './components/newlog/newlog.component';
 
 import { ValidateService } from './services/validate.service';
 import { AuthService } from './services/auth.service';
@@ -22,7 +23,8 @@ const appRoutes: Routes = [
   {path:'register', component: RegisterComponent},
   {path:'login', component: LoginComponent},
   {path:'profile', component: ProfileComponent, canActivate:[AuthGuard]},
-  {path:'dashboard', component: DashboardComponent, canActivate:[AuthGuard]}
+  {path:'dashboard', component: DashboardComponent, canActivate:[AuthGuard]},
+  {path:'newlog', component: NewlogComponent, canActivate:[AuthGuard]}
 ];
 
 @NgModule({
@@ -33,7 +35,8 @@ const appRoutes: Routes = [
     RegisterComponent,
     HomeComponent,
     DashboardComponent,
-    ProfileComponent
+    ProfileComponent,
+    NewlogComponent
   ],
   imports: [
     BrowserModule,
