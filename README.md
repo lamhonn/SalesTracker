@@ -9,6 +9,7 @@ Or you can register and test the app yourself.
 
 In case you want to test it locally:
 - You need Node.js and MongoDB installed on your device
+- If the database doesn't generate collections automatically, create a database named 'timelogger', with collections 'logs' and 'users'
 - Clone this app in your desired location
 - In terminal, do:
 ```
