@@ -1,6 +1,7 @@
 # Fi-Tech Full-stack Course Final Project: Timelogger
 This is a final project for FiTech Software Development: Full-stack course.
 The app is a simple workhour logger, where you can log your worktime done.
+Demonstration video: https://youtu.be/w9Kqgwj0fJM
 
 You can test the app from this link: https://thawing-spire-40928.herokuapp.com/
 You can use testing credentials with username: *adamsmith*, and password: *123456*. 
