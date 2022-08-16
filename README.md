@@ -1,5 +1,5 @@
-# Fi-Tech Full-stack Course Final Project: Timelogger (Honn Lam)
-This is a final project for FiTech Software Development: Full-stack course.
+# Fi-Tech Full-stack Course Final Project: Timelogger
+This is a final project for FiTech Software Development: Full-stack course. Created by **Honn Lam**.
 The app is a simple workhour logger, where you can log your worktime done.
 Demonstration video: https://youtu.be/w9Kqgwj0fJM
 
