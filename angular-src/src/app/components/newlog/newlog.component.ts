@@ -52,6 +52,7 @@ export class NewlogComponent implements OnInit {
     this.authService.newLog(log).subscribe(data => {
       if(data.success) {
         this.flashMessage.show('Logged workhours succesfully', {cssClass: 'alert-success', timeout: 3000});
+        this.router.navigate(['/dashboard']);
       } else {
         this.flashMessage.show('Something went wrong', {cssClass: 'alert-danger', timeout: 3000});
       }

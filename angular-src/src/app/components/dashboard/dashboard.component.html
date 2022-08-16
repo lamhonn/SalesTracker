@@ -1,8 +1,8 @@
 <!-- Based on a Bootswatch template -->
 <div *ngIf="user">
   <h4 style="margin-top: 2%">Past workhours</h4>
-  <form (submit)="getLogsForRange(user.username)">
-    <table class="table table-hover" ng-repeat="log in logs">
+  <form (submit)="getLogs(user.username, startDate, endDate)">
+    <table class="table table-hover">
       <thead>
         <label>Search workhours between</label>
         <tr>
@@ -37,13 +37,12 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <!-- <td>{{log.date}}</td>
-          <td>{{log.hours}}</td>
-          <td>{{log.hours}}</td> -->
+        <tr *ngFor="let arr of log" >
+          <td>{{arr.date}}</td>
+          <td>{{arr.hours}}</td>
+          <td>{{arr.minutes}}</td>
         </tr>
       </tbody>
     </table>
   </form>
-  {{log}}
 </div>
