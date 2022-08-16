@@ -25,7 +25,7 @@ The app also has basic registration and login functionality.
 On page 'New log', you can create a new workhour log. The functionality is simple: you put in the date, hours and minutes. Pressing 'Log' will log the entry to the database.
 
 ### Observing workhour logs:
-On page 'My workhours' you'll see your entries you have logged. By default, it shows entries from the ongoing week.
+On page 'My workhours' you'll see your entries you have logged. By default, it shows entries from the ongoing week. It sorts by latest on top by default
 There are two date inputs, where you can set the boundary dates where to search entries in between of.
 
 
